@@ -37,28 +37,47 @@ namespace Activity4._3._1
                 }
                 else if(input[0] == "update")
                 {
-                    foreach(var name in contacts)
+                    foreach(var contact in contacts)
                     {
                         List<string> phoneNumbers = new List<string>();
-                        phoneNumbers = name.Get();
+                        phoneNumbers = contact.GetNumbers();
 
                         foreach(string number in phoneNumbers)
                         {
                             if(number == input[1])
                             {
-                                name.Update(input[1], input[2], input[3]);
+                                contact.Update(input[1], input[2], input[3]);
                             }
                         }
                     }
                 }
                 else if(input[0]=="delete")
                 {
+                    foreach(var contact in contacts)
+                    {
+                        List<string> phoneNumbers = new List<string>();
+                        phoneNumbers = contact.GetNumbers();
 
+                        foreach(string number in phoneNumbers)
+                        {
+                            if(number == input[1])
+                            {
+                                contact.Delete(input[1]);
+                            }
+                        }
+                    }
                 }
-
-
-
-
+                else if(input[0]=="find")
+                {
+                    foreach(var contact in contacts)
+                    {
+                        string name = contact.GetName();
+                        if(name == input[1])
+                        {
+                            
+                        }
+                    }
+                }
             } while(true);
             //Sean.Get();
         }

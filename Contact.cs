@@ -31,7 +31,7 @@ namespace Activity4._3._1
         {
             this.listNumbers.Remove(numberToDelete);
         }
-        public List<string> Get()
+        public List<string> GetNumbers()
         {
             // Console.WriteLine($"{this.name}: ");
             // foreach(string number in this.listNumbers)
@@ -40,6 +40,10 @@ namespace Activity4._3._1
             // }
             // Console.WriteLine();
             return this.listNumbers;
+        }
+        public string GetName()
+        {
+            return this.name;
         }
     }
 }
