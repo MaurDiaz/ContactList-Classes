@@ -21,8 +21,9 @@ namespace Activity4._3._1
         {
             this.listNumbers.Add(newNumber);
         }
-        public void Update(string oldNumber, string newNumber)
+        public void Update(string oldNumber, string newName, string newNumber)
         {
+            this.name = newName;
             this.listNumbers.Add(newNumber);
             this.listNumbers.Remove(oldNumber);
         }

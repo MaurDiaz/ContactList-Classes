@@ -11,7 +11,7 @@ namespace Activity4._3._1
             Contact Sean = new Contact("Sean", "783526549");
             John.Add("4565631378");
             John.Add("789321546");
-            John.Update("4565631378", "125367984");
+            John.Update("4565631378", "George", "125367984");
             John.Delete("789321546");
 
             List<string> listNumbers = new List<string>();
@@ -35,7 +35,23 @@ namespace Activity4._3._1
                 {
                     contacts.Add(new Contact(input[1], input[2]));
                 }
-                else if(input[0]=="update")
+                else if(input[0] == "update")
+                {
+                    foreach(var name in contacts)
+                    {
+                        List<string> phoneNumbers = new List<string>();
+                        phoneNumbers = name.Get();
+
+                        foreach(string number in phoneNumbers)
+                        {
+                            if(number == input[1])
+                            {
+                                name.Update(input[1], input[2], input[3]);
+                            }
+                        }
+                    }
+                }
+                else if(input[0]=="delete")
                 {
 
                 }
