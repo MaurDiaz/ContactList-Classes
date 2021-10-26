@@ -78,9 +78,16 @@ namespace Activity4._3._1
                         }
                     }
                 }
-                
+                else if (input[0]=="exit")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please try again...");
+                    break;
+                }
             } while(true);
-            //Sean.Get();
         }
     }
 }
