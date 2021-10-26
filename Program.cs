@@ -87,6 +87,7 @@ namespace Activity4._3._1
                     Console.WriteLine("Invalid input. Please try again...");
                     break;
                 }
+                
             } while(true);
         }
     }
