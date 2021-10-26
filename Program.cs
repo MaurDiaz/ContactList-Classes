@@ -14,8 +14,8 @@ namespace Activity4._3._1
             John.Update("4565631378", "George", "125367984");
             John.Delete("789321546");
 
-            List<string> listNumbers = new List<string>();
-            listNumbers = John.Get();
+            List<string> listNumbers = new List<string>();  
+            listNumbers = John.GetNumbers();
             Console.WriteLine(listNumbers[1]);
 
             List<Contact> contacts = new List<Contact>();
@@ -74,10 +74,11 @@ namespace Activity4._3._1
                         string name = contact.GetName();
                         if(name == input[1])
                         {
-                            
+                            contact.DisplayContact();
                         }
                     }
                 }
+                
             } while(true);
             //Sean.Get();
         }

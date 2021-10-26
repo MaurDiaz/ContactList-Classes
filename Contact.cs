@@ -33,17 +33,20 @@ namespace Activity4._3._1
         }
         public List<string> GetNumbers()
         {
-            // Console.WriteLine($"{this.name}: ");
-            // foreach(string number in this.listNumbers)
-            // {
-            //     Console.Write($"{number} ");
-            // }
-            // Console.WriteLine();
             return this.listNumbers;
         }
         public string GetName()
         {
             return this.name;
+        }
+        public void DisplayContact()
+        {
+            Console.WriteLine($"{this.name}: ");
+            foreach(string number in this.listNumbers)
+            {
+                Console.Write($"{number} ");
+            }
+            Console.WriteLine();
         }
     }
 }
