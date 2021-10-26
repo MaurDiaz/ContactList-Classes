@@ -18,8 +18,8 @@ namespace Activity4._3._1
             listNumbers = John.Get();
             Console.WriteLine(listNumbers[1]);
 
-            List<string> contacts = new List<string>();
-            
+            List<Contact> contacts = new List<Contact>();
+
             do {
                 Console.WriteLine("Contact List\nEnter one of the following commands:");
                 Console.WriteLine("add <Name> <Number>");
@@ -28,9 +28,17 @@ namespace Activity4._3._1
                 Console.WriteLine("find <Name>");
                 Console.WriteLine("or 'exit' to end");
                 string command = Console.ReadLine();
+                command = command.ToLower();
                 string[] input = command.Split(" ");
 
-                if 
+                if(input[0]=="add")
+                {
+                    contacts.Add(new Contact(input[1], input[2]));
+                }
+                else if(input[0]=="update")
+                {
+
+                }
 
 
 
