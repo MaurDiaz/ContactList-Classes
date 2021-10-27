@@ -17,7 +17,7 @@ namespace Activity4._3._1
             this.name = name;
             this.listNumbers.Add(number);
         }
-        public void Add(string newNumber)
+        public void AddNumber(string newNumber)
         {
             this.listNumbers.Add(newNumber);
         }
