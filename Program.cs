@@ -7,16 +7,16 @@ namespace Activity4._3._1
     {
         static void Main(string[] args)
         {
-            Contact John = new Contact("John","56123789");
-            Contact Sean = new Contact("Sean", "783526549");
-            John.Add("4565631378");
-            John.Add("789321546");
-            John.Update("4565631378", "George", "125367984");
-            John.Delete("789321546");
+            // Contact John = new Contact("John","56123789");
+            // Contact Sean = new Contact("Sean", "783526549");
+            // John.Add("4565631378");
+            // John.Add("789321546");
+            // John.Update("4565631378", "George", "125367984");
+            // John.Delete("789321546");
 
-            List<string> listNumbers = new List<string>();  
-            listNumbers = John.GetNumbers();
-            Console.WriteLine(listNumbers[1]);
+            // List<string> listNumbers = new List<string>();  
+            // listNumbers = John.GetNumbers();
+            // Console.WriteLine(listNumbers[1]);
 
             List<Contact> contacts = new List<Contact>();
 
@@ -41,7 +41,7 @@ namespace Activity4._3._1
                     {
                         List<string> phoneNumbers = new List<string>();
                         phoneNumbers = contact.GetNumbers();
-
+                        //lock(phoneNumbers)
                         foreach(string number in phoneNumbers)
                         {
                             if(number == input[1])
@@ -53,21 +53,21 @@ namespace Activity4._3._1
                 }
                 else if(input[0]=="delete")
                 {
-                    foreach(var contact in contacts)
+                    for(int i = 0; i < contacts.Count; i++)
                     {
                         List<string> phoneNumbers = new List<string>();
-                        phoneNumbers = contact.GetNumbers();
+                        phoneNumbers = contacts[i].GetNumbers();
 
-                        foreach(string number in phoneNumbers)
+                        for(int j = 0; j < phoneNumbers.Count; j++)
                         {
-                            if(number == input[1])
+                            if(phoneNumbers[j] == input[1])
                             {
-                                contact.Delete(input[1]);
+                                contacts[i].Delete(input[1]);
                             }
                         }
                     }
                 }
-                else if(input[0]=="find")
+                else if(input[0] == "find")
                 {
                     foreach(var contact in contacts)
                     {
@@ -78,7 +78,7 @@ namespace Activity4._3._1
                         }
                     }
                 }
-                else if (input[0]=="exit")
+                else if(input[0]=="exit")
                 {
                     break;
                 }
@@ -86,8 +86,7 @@ namespace Activity4._3._1
                 {
                     Console.WriteLine("Invalid input. Please try again...");
                     break;
-                }
-                
+                }  
             } while(true);
         }
     }
