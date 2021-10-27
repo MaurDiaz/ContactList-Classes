@@ -21,6 +21,7 @@ namespace Activity4._3._1
             List<Contact> contacts = new List<Contact>();
 
             do {
+                //Console.Clear();
                 Console.WriteLine("Contact List\nEnter one of the following commands:");
                 Console.WriteLine("add <Name> <Number>");
                 Console.WriteLine("update <Old Number> <Updated Name> <New Number>");
@@ -28,7 +29,7 @@ namespace Activity4._3._1
                 Console.WriteLine("find <Name>");
                 Console.WriteLine("or 'exit' to end");
                 string command = Console.ReadLine();
-                command = command.ToLower();
+                //command = command.ToLower();
                 string[] input = command.Split(" ");
 
                 if(input[0]=="add")
@@ -37,16 +38,16 @@ namespace Activity4._3._1
                 }
                 else if(input[0] == "update")
                 {
-                    foreach(var contact in contacts)
+                    for(int i = 0; i < contacts.Count; i++)
                     {
                         List<string> phoneNumbers = new List<string>();
-                        phoneNumbers = contact.GetNumbers();
-                        //lock(phoneNumbers)
-                        foreach(string number in phoneNumbers)
+                        phoneNumbers = contacts[i].GetNumbers();
+
+                        for(int j = 0; j < phoneNumbers.Count; j++)
                         {
-                            if(number == input[1])
+                            if(phoneNumbers[j] == input[1])
                             {
-                                contact.Update(input[1], input[2], input[3]);
+                                contacts[i].Update(input[1], input[2], input[3]);
                             }
                         }
                     }
